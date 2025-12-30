@@ -40,7 +40,8 @@ XcodeHub-iOS/
 │   ├── Views/
 │   │   ├── Projects/
 │   │   │   ├── ProjectsView.swift    # Projects grid
-│   │   │   └── ProjectCard.swift     # Project card component
+│   │   │   ├── ProjectCard.swift     # Project card component
+│   │   │   └── ProjectDetailView.swift # Project briefing/details
 │   │   ├── Disk/
 │   │   │   └── DiskView.swift        # Disk overview
 │   │   ├── Cleanup/
@@ -72,6 +73,8 @@ Backend: `http://100.75.88.8:9004` (Tailscale) or `http://localhost:9004`
 |----------|--------|-------------|
 | `/health` | GET | Health check |
 | `/api/xcode/projects` | GET | List all iOS/macOS projects |
+| `/api/xcode/briefing` | GET | Get project details (summary, features, size) |
+| `/api/xcode/delete` | POST | Delete project (requires confirmation) |
 | `/api/open-xcode` | POST | Open project in Xcode |
 | `/api/disk/overview` | GET | Disk usage by directory |
 | `/api/disk/cache` | GET | Cache sizes (npm, pip, system) |
@@ -89,6 +92,15 @@ Backend: `http://100.75.88.8:9004` (Tailscale) or `http://localhost:9004`
 - Filter by platform (All/iOS/macOS)
 - Search by name
 - "Open in Xcode" button on each card
+- **Delete project** with 2-step confirmation (2FA-like):
+  - Step 1: "Are you sure?" confirmation
+  - Step 2: Type project name to confirm
+- **Project Details** (tap on card):
+  - Summary from CLAUDE.md/README.md
+  - Features list
+  - Size, file count, Swift files
+  - Last modified date
+  - Bundle ID
 - Pull-to-refresh
 
 ### 2. Disk Tab

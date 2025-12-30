@@ -3,6 +3,7 @@ import SwiftUI
 struct ProjectCard: View {
     let project: XcodeProject
     let onOpen: () -> Void
+    let onDelete: () -> Void
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -44,20 +45,33 @@ struct ProjectCard: View {
                     .lineLimit(1)
             }
 
-            Button(action: onOpen) {
-                HStack {
-                    Image(systemName: "hammer.fill")
-                    Text("Open in Xcode")
+            HStack(spacing: 8) {
+                Button(action: onOpen) {
+                    HStack {
+                        Image(systemName: "hammer.fill")
+                        Text("Open")
+                    }
+                    .font(.subheadline)
+                    .fontWeight(.medium)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 10)
+                    .background(Color.accentColor)
+                    .foregroundStyle(.white)
+                    .cornerRadius(8)
                 }
-                .font(.subheadline)
-                .fontWeight(.medium)
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 10)
-                .background(Color.accentColor)
-                .foregroundStyle(.white)
-                .cornerRadius(8)
+                .buttonStyle(.plain)
+
+                Button(action: onDelete) {
+                    Image(systemName: "trash.fill")
+                        .font(.subheadline)
+                        .fontWeight(.medium)
+                        .frame(width: 44, height: 38)
+                        .background(Color.red.opacity(0.1))
+                        .foregroundStyle(.red)
+                        .cornerRadius(8)
+                }
+                .buttonStyle(.plain)
             }
-            .buttonStyle(.plain)
         }
         .padding()
         .background(Color(.secondarySystemGroupedBackground))
@@ -68,6 +82,7 @@ struct ProjectCard: View {
 struct ProjectCardCompact: View {
     let project: XcodeProject
     let onOpen: () -> Void
+    let onDelete: () -> Void
 
     var body: some View {
         HStack(spacing: 12) {
@@ -94,6 +109,13 @@ struct ProjectCardCompact: View {
 
             Spacer()
 
+            Button(action: onDelete) {
+                Image(systemName: "trash")
+                    .font(.body)
+                    .foregroundStyle(.red)
+            }
+            .buttonStyle(.plain)
+
             Button(action: onOpen) {
                 Image(systemName: "arrow.up.forward.square")
                     .font(.title3)
@@ -114,7 +136,8 @@ struct ProjectCardCompact: View {
                 name: "ProductivityHub-iOS",
                 path: "/Users/neog/Apps/iOS/ProductivityHub-iOS"
             ),
-            onOpen: {}
+            onOpen: {},
+            onDelete: {}
         )
 
         ProjectCardCompact(
@@ -122,7 +145,8 @@ struct ProjectCardCompact: View {
                 name: "17Licoes-macOS",
                 path: "/Users/neog/Apps/macOS/17Licoes-macOS"
             ),
-            onOpen: {}
+            onOpen: {},
+            onDelete: {}
         )
     }
     .padding()

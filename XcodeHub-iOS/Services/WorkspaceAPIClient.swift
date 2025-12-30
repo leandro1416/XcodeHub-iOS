@@ -55,6 +55,18 @@ class WorkspaceAPIClient: ObservableObject {
         return try await post("/api/open-xcode", body: ["path": path])
     }
 
+    func deleteProject(path: String, confirmationCode: String) async throws -> DeleteProjectResponse {
+        return try await post("/api/xcode/delete", body: [
+            "path": path,
+            "confirmation_code": confirmationCode
+        ])
+    }
+
+    func getProjectBriefing(path: String) async throws -> ProjectBriefingResponse {
+        let encodedPath = path.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? path
+        return try await get("/api/xcode/briefing?path=\(encodedPath)")
+    }
+
     // MARK: - Disk
 
     func getDiskOverview() async throws -> DiskOverviewResponse {

@@ -24,6 +24,7 @@
 		7D006F36EAF14B11BC772FCF /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA061747FC3C474F912C779C /* SettingsManager.swift */; };
 		8AB796EEB32F450D9C783C6E /* DiskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C221377301E64C70AE3B446F /* DiskViewModel.swift */; };
 		922F5B814D814C16942620FC /* ProjectCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2211A6EBD1724DB58AFAC876 /* ProjectCard.swift */; };
+		PRJDETAIL0000000000001 /* ProjectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = PRJDETAIL0000000000002 /* ProjectDetailView.swift */; };
 		9AAA6CE71C7E4235BC287552 /* ProjectsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C430575643940FBADF277B8 /* ProjectsViewModel.swift */; };
 		A6356C9E4E064662908C0B36 /* XcodeHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAD0E38300941A79FDE1360 /* XcodeHubApp.swift */; };
 		C2C7A8C08C5F45F89B31CCE5 /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B348F055DB845569DDD8517 /* ProgressRing.swift */; };
@@ -47,6 +48,7 @@
 		1DD1103F289F4DBA841C8433 /* StatRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatRow.swift; sourceTree = "<group>"; };
 		1E3975341F3840A7AD63AC9D /* XcodeProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XcodeProject.swift; sourceTree = "<group>"; };
 		2211A6EBD1724DB58AFAC876 /* ProjectCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCard.swift; sourceTree = "<group>"; };
+		PRJDETAIL0000000000002 /* ProjectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailView.swift; sourceTree = "<group>"; };
 		24B07A6315D64D5B8180A19A /* StorageCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageCard.swift; sourceTree = "<group>"; };
 		2722B21368144B48B2D1647F /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		2C430575643940FBADF277B8 /* ProjectsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewModel.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				2211A6EBD1724DB58AFAC876 /* ProjectCard.swift */,
+				PRJDETAIL0000000000002 /* ProjectDetailView.swift */,
 				E1A995CF1EC941DFA2B495CE /* ProjectsView.swift */,
 			);
 			path = Projects;
@@ -320,6 +323,7 @@
 				515B4DC4A7024E119EB006D2 /* CleanupView.swift in Sources */,
 				F327F1C55FA04E26AE713B32 /* DiskView.swift in Sources */,
 				922F5B814D814C16942620FC /* ProjectCard.swift in Sources */,
+				PRJDETAIL0000000000001 /* ProjectDetailView.swift in Sources */,
 				CBC43CCC0DDF4E6AA6FADEB0 /* ProjectsView.swift in Sources */,
 				C3FFA4B4D9FD4F47A6FC869A /* SettingsView.swift in Sources */,
 				A6356C9E4E064662908C0B36 /* XcodeHubApp.swift in Sources */,
